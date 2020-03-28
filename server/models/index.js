@@ -7,3 +7,4 @@ mongoose.connect('mongodb://localhost/twitter-clone', {
 });
 
 exports.User = require('./user');
+exports.Message = require('./message');
