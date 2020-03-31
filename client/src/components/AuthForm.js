@@ -8,7 +8,7 @@ const AuthForm = props => {
     profileImageUrl: ''
   });
 
-  const { heading, buttonText, signin, signup } = props;
+  const { heading, buttonText, signin, signup, onAuth } = props;
   const { email, username, password, profileImageUrl } = state;
 
   const onChangeHandler = e => {
@@ -16,7 +16,11 @@ const AuthForm = props => {
     setState(newState);
   };
 
-  const onSubmitHandler = () => {};
+  const onSubmitHandler = e => {
+    e.preventDefault();
+    const authType = signin ? 'signin' : signup ? 'signup' : null;
+    onAuth(authType, state).then(() => console.log('hello'));
+  };
 
   return (
     <div className="row justify-content-md-center text-center">
