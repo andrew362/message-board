@@ -8,7 +8,7 @@ const AuthForm = props => {
     profileImageUrl: ''
   });
 
-  const { heading, buttonText, signin, signup, onAuth } = props;
+  const { heading, buttonText, signin, signup, onAuth, errors, history } = props;
   const { email, username, password, profileImageUrl } = state;
 
   const onChangeHandler = e => {
@@ -19,7 +19,11 @@ const AuthForm = props => {
   const onSubmitHandler = e => {
     e.preventDefault();
     const authType = signin ? 'signin' : signup ? 'signup' : null;
-    onAuth(authType, state).then(() => console.log('hello'));
+    onAuth(authType, state)
+      .then(() => history.push('/'))
+      .catch(() => {
+        return;
+      });
   };
 
   return (
@@ -27,6 +31,7 @@ const AuthForm = props => {
       <div className="col-md-6">
         <form onSubmit={onSubmitHandler}>
           <h2>{heading}</h2>
+          {errors.message && <div className="alert alert-danger">{errors.message}</div>}
           <label htmlFor="email">Email:</label>
           <input
             type="text"
