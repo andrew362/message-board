@@ -1,10 +1,12 @@
- import {combineReducers} from 'redux';
- import currentUser from './currentUser';
- import errors from './errors';
+import { combineReducers } from 'redux';
+import currentUser from './currentUser';
+import errors from './errors';
+import messages from './messages';
 
- const rootReducers = combineReducers({
-     currentUser,
-     errors
- });
+const rootReducers = combineReducers({
+  currentUser,
+  errors,
+  messages
+});
 
- export default rootReducers;
+export default rootReducers;
