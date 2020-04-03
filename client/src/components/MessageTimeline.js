@@ -1,9 +1,11 @@
 import React from 'react';
-import MessageList from '../MessageList';
+import MessageList from '../containers/MessageList';
+import UserAside from './UserAside';
 
-const MessageTimeline = () => {
+const MessageTimeline = ({ user }) => {
   return (
-    <div>
+    <div className="row">
+      <UserAside username={user.username} profileImgageUrl={user.profileImgageUrl} />
       <MessageList />
     </div>
   );

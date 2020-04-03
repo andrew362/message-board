@@ -13,11 +13,10 @@ export const fetchMessages = () => {
   return dispatch => {
     return apiCall('get', '/api/messages')
       .then(res => {
-        console.log(res);
         dispatch(loadMessages(res));
       })
       .catch(err => {
-        addError(err.messages);
+        dispatch(addError(err.messages));
       });
   };
 };
