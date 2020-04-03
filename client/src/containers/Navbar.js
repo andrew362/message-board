@@ -16,7 +16,7 @@ const Navbar = props => {
         {currentUser.isAuthenticated ? (
           <ul className="nav navbar-nav navbar-right">
             <li>
-              <Link className="btn btn-secondary m-2" to="/">
+              <Link className="btn btn-secondary m-2" to={`/users/${currentUser.user.id}/messages/new`}>
                 New Message
               </Link>
             </li>

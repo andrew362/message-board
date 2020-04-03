@@ -17,10 +17,9 @@ app.use(bodyParser.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/users/:id/messages', loginRequired, ensureCorrectUser, messagesRoutes);
 app.use('/api/messages', loginRequired, async function(req,res,next){
-    console.log(req);
 
     try {
-        let messages = await db.Message.find().sort({createAt: 'desc'}).populate('user', {
+        let messages = await db.Message.find().sort({createdAt: 'desc'}).populate('user', {
             username: true, profileImageUrl: true
         });
         console.log(messages);

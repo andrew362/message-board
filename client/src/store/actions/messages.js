@@ -20,3 +20,10 @@ export const fetchMessages = () => {
       });
   };
 };
+
+export const postNewMessage = text => (dispatch, getState) => {
+  const { currentUser } = getState();
+  return apiCall('post', `/api/users/${currentUser.user.id}/messages`, { text })
+    .then(res => {})
+    .catch(err => dispatch(addError(err)));
+};
