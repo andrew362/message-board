@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchMessages } from '../store/actions/messages';
+import { fetchMessages, removeMessage } from '../store/actions/messages';
 import MessageItem from '../components/MessageItem';
 
 const MessageList = props => {
-  const { messages, fetchMessages } = props;
+  const { messages, fetchMessages, removeMessage, currentUserId } = props;
 
   useEffect(() => {
     fetchMessages();
@@ -19,8 +19,10 @@ const MessageList = props => {
               key={m._id}
               date={m.createAt}
               text={m.text}
-              username={m.user.username}
+              user={m.user}
               profileImageUrl={m.user.profileImageUrl}
+              removeMessage={() => removeMessage(m.user._id, m._id)}
+              currentUserId={currentUserId}
             />
           ))}
         </ul>
@@ -31,8 +33,9 @@ const MessageList = props => {
 
 const mapStateToPros = state => {
   return {
-    messages: state.messages
+    messages: state.messages,
+    currentUserId: state.currentUser.user.id
   };
 };
 
-export default connect(mapStateToPros, { fetchMessages })(MessageList);
+export default connect(mapStateToPros, { fetchMessages, removeMessage })(MessageList);
