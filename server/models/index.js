@@ -3,7 +3,8 @@ mongoose.set('debug', true);
 mongoose.Promise = Promise;
 mongoose.connect('mongodb://localhost/twitter-clone', {
     keepAlive: true,
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 });
 
 exports.User = require('./user');

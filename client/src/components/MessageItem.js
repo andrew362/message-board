@@ -16,9 +16,9 @@ const MessageItem = ({ date, profileImageUrl, text, user, removeMessage, current
         </span>
         <span>
           {currentUserId === user._id ? (
-            <a className="btn btn-danger" onClick={removeMessage}>
+            <button className="btn btn-danger" onClick={removeMessage}>
               X
-            </a>
+            </button>
           ) : null}
         </span>
         <p>{text}</p>

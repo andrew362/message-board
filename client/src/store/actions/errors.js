@@ -1,4 +1,4 @@
-import {ADD_ERROR, REMOVE_ERROR, SET_CURRENT_USER} from '../actionTypes';
+import {ADD_ERROR, REMOVE_ERROR} from '../actionTypes';
 
 export const addError = error => {
     return {

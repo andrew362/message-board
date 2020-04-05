@@ -83,6 +83,4 @@ const AuthForm = props => {
   );
 };
 
-const mapStateToProps = state => {};
-
 export default AuthForm;
