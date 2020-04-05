@@ -14,14 +14,14 @@ const Main = props => {
   history.listen(() => removeError());
 
   return (
-    <div className="container">
+    <div>
       <Switch>
         <Route exact={true} path="/" render={props => <Homepage currentUser={currentUser} {...props} />} />
         <Route
           exact={true}
           path="/signin"
           render={props => (
-            <AuthForm errors={errors} onAuth={authUser} signin buttonText="Log In!" heading="Welcome Back" {...props} />
+            <AuthForm errors={errors} onAuth={authUser} signin buttonText="Log In!" heading="Log In" {...props} />
           )}
         />
         <Route

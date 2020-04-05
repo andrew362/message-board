@@ -11,13 +11,13 @@ const MessageList = props => {
   }, []);
 
   return (
-    <div className="col-sm-8">
-      <div className="offset-1 col-sm-10">
-        <ul className="list-group" id="messages">
+    <div className="col-sm-12 col-md-10">
+      <div className="col-sm-12 col-md-10">
+        <ul className="list-group list-unstyled" id="messages">
           {messages.map(m => (
             <MessageItem
               key={m._id}
-              date={m.createAt}
+              date={m.createdAt}
               text={m.text}
               user={m.user}
               profileImageUrl={m.user.profileImageUrl}
