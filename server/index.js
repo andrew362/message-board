@@ -9,7 +9,8 @@ const messagesRoutes = require('./routes/messages');
 const {loginRequired,ensureCorrectUser} = require('./middleware/auth');
 const db = require('./models');
 
-const PORT = 8080;
+const PORT = process.env.PORT || 5001;
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/twitter-clone';
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -39,4 +40,5 @@ app.use(errorHandler);
 
 app.listen(PORT, function(){
     console.log(`Server started on port ${PORT}`);
+    console.log(`mongodb: ${MONGODB_URI}`);
 });
