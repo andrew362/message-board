@@ -8,7 +8,7 @@ const Navbar = props => {
   const { currentUser, logout } = props;
 
   return (
-    <nav className="navbar navbar-expand navbar-dark bg-dark">
+    <nav style={{zIndex:2}} className="navbar navbar-expand navbar-dark bg-dark">
       <div className="container-fluid">
         <Link to="/" className="navbar-brand">
           <img style={{ width: '50px' }} src={Logo} alt="Home" />

@@ -12,7 +12,7 @@ const Homepage = ({ currentUser }) => {
           </div>
         </div>
       ) : (
-        <div className="welcome-page one-page rgba-gradient d-flex justify-content-center align-items-center px-md-3 px-sm-0">
+        <div style={{zIndex:1}} className="welcome-page one-page rgba-gradient d-flex justify-content-center align-items-center px-md-3 px-sm-0">
           <div className="row wow fadeIn">
             <div className="col-md-12 mb-4 white-text text-center wow fadeIn">
               <h3 className="display-3 font-weight-bold white-text mb-0 pt-md-5 pt-5">Messanger</h3>

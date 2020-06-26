@@ -27,7 +27,7 @@ const AuthForm = (props) => {
   };
 
   return (
-    <div className="rgba-gradient one-page d-flex justify-content-center align-items-center">
+    <div style={{zIndex:1}} className="rgba-gradient one-page d-flex justify-content-center align-items-center">
       <div className="col-md-6">
         <div className="card">
           <div className="card-body">

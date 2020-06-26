@@ -17,8 +17,9 @@ code {
   margin: 10px 0;
 } */
 
-.rgba-gradient {
+#root {
   background: linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 100%);
+  min-height: 100vh;
 }
 
 .one-page {

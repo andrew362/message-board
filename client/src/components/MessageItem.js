@@ -7,7 +7,7 @@ const MessageItem = ({ date, profileImageUrl, text, user, removeMessage, current
   return (
     <li className="message_item d-flex justify-content-start align-items-start flex-column flex-md-row mb-4">
       <img
-        className="avatar rounded-circle mr-2 ml-lg-3 ml-0 z-depth-1"
+        className="avatar mr-2 ml-lg-3 ml-0"
         src={profileImageUrl || defaultImageUser}
         style={{ height: '50px' }}
         alt={user.username}

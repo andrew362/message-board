@@ -14,10 +14,10 @@ const MessageForm = props => {
   };
 
   return (
-    <form onSubmit={handleNewMessage}>
+    <form style={{width: '80%', margin: '50px auto', textAlign: 'right'}} onSubmit={handleNewMessage}>
       {errors.message && (<div className="alert alert-danger">{errors.message}</div>)}
       <input type="text" className="form-control" value={message} onChange={e => setMessage(e.target.value)} />
-      <button type="submit" className="btn btn-success pull-right">
+      <button style={{backgroundColor: '#0065c8'}} type="submit" className="btn">
         Send!
       </button>
     </form>
